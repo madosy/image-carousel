@@ -1,0 +1,117 @@
+:root {
+  --container-width: 500px;
+  --container-height: 300px;
+  --container-border-radius: 15px;
+}
+
+.carousel-container {
+  position: relative;
+  width: var(--container-width);
+  height: var(--container-height);
+  border-radius: var(--container-border-radius);
+}
+
+.carousel-container * {
+  transition: all 0.2s ease-in-out;
+}
+
+.image-reel {
+  width: var(--container-width);
+  height: var(--container-height);
+  border-radius: var(--container-border-radius);
+  box-shadow: 0px 3px 10px black;
+  white-space: nowrap;
+  overflow: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.image {
+  display: inline-block;
+  width: var(--container-width);
+  height: var(--container-height);
+  background-size: cover;
+  background-position: center;
+
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.button {
+  display: flex;
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 40%);
+  opacity: 0%;
+  color: rgba(255, 255, 255, 70%);
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 100%;
+}
+
+.right.button {
+  right: 0;
+  border-bottom-right-radius: var(--container-border-radius);
+  bottom-top-right-radius: var(--container-border-radius);
+}
+.left.button {
+  border-bottom-left-radius: var(--container-border-radius);
+  bottom-top-left-radius: var(--container-border-radius);
+}
+
+.position-indicator {
+  position: absolute;
+  bottom: 5%;
+  right: 0;
+  left: 0;
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  width: max-content;
+  height: 10px;
+  /*   background-color: white; */
+}
+
+.circle {
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  opacity: 0%;
+  box-sizing: border-box;
+  border: solid white 1px;
+}
+.circle.filled {
+  background-color: white;
+}
+.carousel-container:hover .circle {
+  opacity: 50%;
+}
+
+.image:nth-child(1) {
+  background-image: url("https://images.unsplash.com/photo-1681097228666-f65d459530f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80");
+}
+.image:nth-child(2) {
+  background-image: url("https://images.unsplash.com/photo-1681323206103-6fe1f8ced9e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80");
+}
+.image:nth-child(3) {
+  background-image: url("https://images.unsplash.com/photo-1680996848922-b741fa3f1596?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+}
+
+.image:nth-child(4) {
+  background-image: url("https://images.unsplash.com/photo-1680790485351-879fc71f5c8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80");
+}
+
+.image:nth-child(5) {
+  background-image: url(https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80);
+}
